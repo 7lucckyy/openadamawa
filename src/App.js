@@ -1,24 +1,43 @@
-import logo from './logo.svg';
+
 import './App.css';
+import './bootstrap.min.css';
+import Header from './Components/Header';
+import {Container, Col, Row} from 'react-bootstrap';
+import Table from './Components/Table';
+import Form from './Components/Form';
+import Map from './Components/Map'
+import Summary from './Components/Summary';
+
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header/>
+      <main className='py-3'>
+        <Container>
+        <Row >
+          <Col>
+              <Form />
+          </Col>
+          <Col>
+              <Map />
+          </Col>
+          </Row>
+            <Row>
+              <Col >
+                  <Summary/>
+              </Col>
+            </Row>
+        </Container>
+        <Container>
+          <Table/>
+        </Container>
+       
+      </main>
+    </>
   );
 }
 
